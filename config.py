@@ -1,0 +1,4 @@
+TOKEN = "7792683400:AAFqO56KuLCCyfENkvjAxB_2hq32gzmkY4o"
+
+
+Chanel_id = -1002177771356
