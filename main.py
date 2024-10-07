@@ -36,10 +36,10 @@ async def check_handler(message: Message):
 @dp.callback_query(CheksupChanel1())
 async def check_handler(cal: CallbackQuery):
     user_id = cal.from_user.id
-    # if await check_subscription(user_id):
-    #     await message.reply(f"Salom! Botdan foydalanishingiz mumkin:\nKino kodini kiriting!")
-    # else:
-    await cal.message.reply("❌ Kechirasiz botimizdan foydalanishdan oldin ushbu kanallarga a'zo bo'lishingiz kerak.", reply_markup=KANALLAR)
+    if await check_subscription(user_id):
+        await cal.message.reply(f"Salom! Botdan foydalanishingiz mumkin:\nKino kodini kiriting!")
+    else:
+        await cal.message.reply("❌ Kechirasiz botimizdan foydalanishdan oldin ushbu kanallarga a'zo bo'lishingiz kerak.", reply_markup=KANALLAR)
 
 
 
@@ -227,6 +227,7 @@ async def kodkino(message: Message):
             for i in read_db():
                 if i[0] == int(kod):
                     await message.answer_video(video=f"{i[3]}", caption=f"Kino kodi: #{i[0]}\n{i[1]}\n\n{i[2]}")
+                    print(i[3])
                     break
             else:
                 await message.answer("Bu kodda kino mavjud emas😌")

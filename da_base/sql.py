@@ -20,10 +20,10 @@ def read_db():
             
             print('good')
 # print(read_db())
-# # kod = 14423
-# # for i in read_db():
-# #     if kod == i[0]:
-# #         print(i[3])
+# kod = 1
+# for i in read_db():
+#     if kod == i[0]:
+#         print(i[3])
 
 
 
